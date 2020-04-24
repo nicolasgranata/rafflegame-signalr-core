@@ -1,0 +1,62 @@
+﻿@page
+@{
+    ViewData["Title"] = "Control Panel";
+}
+
+<style>
+
+    .panel-body h1, h2, h3 {
+        color: white;
+    }
+
+    .panel-body div {
+        font-size: 72px;
+        color: white;
+    }
+</style>
+
+
+<div id="headerPanel" class="panel">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel" style="background-color:#3d3a3a">
+                <div class="panel-body">
+                    <div>
+                        <h1 class="text-center" style="font-size:60px">http://sorteamos.algeiba.com</h1>
+                    </div>
+                    <br />
+                    <div>
+                        <img style="float:left;width:36px;height:36px" src="~/images/user-circle-o.png" />
+                        <div style="font-size:29px; padding-left:40px">Conectados: <span id="users">0</span></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="buttonTrivia" class="row">
+    <div class="col-lg-6">
+        <div class="panel">
+            <div class="panel-body">
+                <button id="startGame" type="button" class="btn btn-info btn-block pull-right"><h3>Let's raffle</h3></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel">
+            <div class="panel-body">
+                <button id="restartGame" type="button" class="btn btn-info btn-block"><h3>Restart Game</h3></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="winnerPanel" class="container" >
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h1 id="winnerTitle" class="text-center"></h1>
+        </div>
+    </div>
+</div>

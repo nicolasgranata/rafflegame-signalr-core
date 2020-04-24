@@ -1,0 +1,68 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "SignalR Game";
+}
+
+<div id="panelGame">
+    <div id="welcomePanel" class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center">Welcome to the draw with SignalR Core!</h1>
+            </div>
+
+            <div id="participatePannel" class="row" style="margin-top:5%">
+                <div class="col-lg-12">
+                    <button id="participateButton" onClick="participate()" type="button" class="btn btn-primary"><h3>I want to participate!</h3></button>
+                </div>
+            </div>
+
+            <div id="connectingPanel" class="row d-none" style="margin-top:5%">
+                <div class="col-lg-12">
+                    <h2>Connecting...</h2>
+                    <img src="~/images/connecting.gif" class="img-fluid" alt="connecting.gif" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="lobby" class="container d-none">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center">Don't close the browser</h1>
+                <h1 class="text-center">The game is about to start...</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="loserPanel" class="container d-none">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-center">Better luck next time!</h1>
+            <br />
+            <img src="~/images/loser.gif" class="img-responsive img-center" alt="loser image"/>
+        </div>
+    </div>
+</div>
+
+
+<div id="restartGame" class="container d-none">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="text-center" style="color:black !important">¡Reinicie la página o vuelva a ingresar para participar!</h2>
+            <br />
+            <br />
+            <img src="~/images/reload.gif" class="img-responsive img-center" alt="Cinque Terre" />
+        </div>
+    </div>
+</div>
+
+<div id="winnerPanel" class="d-none">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h1 id="winnerID" class="text-center"></h1>
+        </div>
+    </div>
+</div>
