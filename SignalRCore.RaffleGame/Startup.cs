@@ -52,6 +52,7 @@ namespace SignalRCore.DrawGame
             {
                 endpoints.MapRazorPages();
                 endpoints.MapHub<DrawHub>("/drawHub");
+                endpoints.MapHub<ControlPanelHub>("/controlPanelHub");
             });
         }
     }

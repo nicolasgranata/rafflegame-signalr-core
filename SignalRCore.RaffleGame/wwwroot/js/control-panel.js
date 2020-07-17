@@ -1,5 +1,5 @@
 ﻿const controlPanelConnection = new signalR.HubConnectionBuilder()
-    .withUrl("/drawHub")
+    .withUrl("/controlPanelHub")
     .build();
 
 controlPanelConnection.start().then(() => {
