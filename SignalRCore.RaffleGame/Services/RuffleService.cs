@@ -6,35 +6,37 @@ namespace SignalRCore.DrawGame.Services
 {
     public class RuffleService : IRuffleService
     {
-        private IList<string> userIds { get; set; }
+        private IList<string> _userIds { get; set; }
 
         public RuffleService()
         {
-            userIds = new List<string>();
+            _userIds = new List<string>();
         }
 
         public string Draw()
         {
             Random random = new Random();
 
-            int index = random.Next(userIds.Count());
+            int index = random.Next(_userIds.Count());
 
-            return userIds.ElementAt(index);
+            return _userIds.ElementAt(index);
         }
 
         public void AddParticipant(string participant)
         {
-            userIds.Add(participant);
+            _userIds.Add(participant);
         }
 
         public void RemoveParticipant(string participant)
         {
-            userIds.Remove(participant);
+            _userIds.Remove(participant);
         }
 
         public void RemoveAllParticipants()
         {
-            userIds.Clear();
+            _userIds.Clear();
         }
+
+        public int GetParticipantsCount() => _userIds.Count();
     }
 }

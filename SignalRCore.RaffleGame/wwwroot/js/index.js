@@ -20,11 +20,22 @@ const participate = () => {
     });
 };
 
-drawConnection.on("winner", () => {
+drawConnection.on("Winner", () => {
 
 
 });
 
-drawConnection.on("loser", () => {
+drawConnection.on("Loser", () => {
     document.getElementById("loserPanel").classList.remove("d-none");
+});
+
+drawConnection.on("RestartGame", () => {
+    document.getElementById("restartGame").classList.remove("d-none");
+    document.getElementById("lobby").classList.add("d-none");
+
+    if (drawConnection.state === signalR.HubConnectionState.Connected) {
+        drawConnection.invoke("RestartGame").catch((err) => {
+            console.error(err.toString());
+        });
+    }
 });

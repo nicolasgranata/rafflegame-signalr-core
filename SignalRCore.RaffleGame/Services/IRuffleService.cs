@@ -9,5 +9,7 @@
         void RemoveParticipant(string participant);
 
         void RemoveAllParticipants();
+
+        int GetParticipantsCount();
     }
 }

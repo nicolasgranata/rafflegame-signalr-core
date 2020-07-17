@@ -4,7 +4,6 @@
 }
 
 <style>
-
     .panel-body h1, h2, h3 {
         color: white;
     }
@@ -22,12 +21,12 @@
             <div class="panel" style="background-color:#3d3a3a">
                 <div class="panel-body">
                     <div>
-                        <h1 class="text-center" style="font-size:60px">http://sorteamos.algeiba.com</h1>
+                        <h1 class="text-center" style="font-size:60px">https://localhost:44396/</h1>
                     </div>
                     <br />
                     <div>
                         <img style="float:left;width:36px;height:36px" src="~/images/user-circle-o.png" />
-                        <div style="font-size:29px; padding-left:40px">Conectados: <span id="users">0</span></div>
+                        <div style="font-size:29px; padding-left:40px">Connected players: <span id="players">0</span></div>
                     </div>
 
                 </div>
@@ -36,7 +35,7 @@
     </div>
 </div>
 
-<div id="buttonTrivia" class="row">
+<div class="row">
     <div class="col-lg-6">
         <div class="panel">
             <div class="panel-body">
@@ -53,10 +52,15 @@
     </div>
 </div>
 
-<div id="winnerPanel" class="container" >
+<div id="winnerPanel" class="container">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <h1 id="winnerTitle" class="text-center"></h1>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script src="~/js/control-panel.js" asp-append-version="true"></script>
+}
+
