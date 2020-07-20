@@ -15,7 +15,7 @@ controlPanelConnection.on("UpdateConnectedPlayers", (value) => {
 
 const init = () => {
     document.getElementById("startGame").addEventListener("click", () => {
-        controlPanelConnection.invoke("GetWinner").catch((err) => {
+        controlPanelConnection.invoke("Draw").catch((err) => {
             console.error(err.toString());
         });
     });
@@ -24,5 +24,12 @@ const init = () => {
         controlPanelConnection.invoke("RestartGame").catch((err) => {
             console.error(err.toString());
         });
+
+        document.getElementById("winnerPanel").classList.add("d-none");
     });
 }
+
+controlPanelConnection.on("GetWinner", (value) => {
+    document.getElementById("winnerPanel").classList.remove("d-none");
+    document.getElementById("winnerTitle").innerHTML = value;
+});

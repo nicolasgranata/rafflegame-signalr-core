@@ -21,12 +21,13 @@ const participate = () => {
 };
 
 drawConnection.on("Winner", () => {
-    document.getElementById().classList.remove("d-none");
+    document.getElementById("lobby").classList.add("d-none");
+    document.getElementById("winnerPanel").classList.remove("d-none");
 });
 
 drawConnection.on("Loser", () => {
-    document.getElementById("loserPanel").classList.remove("d-none");
     document.getElementById("lobby").classList.add("d-none");
+    document.getElementById("loserPanel").classList.remove("d-none");
 });
 
 drawConnection.on("RestartGame", () => {
@@ -38,4 +39,7 @@ drawConnection.on("RestartGame", () => {
             console.error(err.toString());
         });
     }
+
+    document.getElementById("loserPanel").classList.add("d-none");
+    document.getElementById("winnerPanel").classList.add("d-none");
 });

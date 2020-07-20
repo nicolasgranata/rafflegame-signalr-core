@@ -7,19 +7,19 @@ namespace SignalRCore.DrawGame.Hubs
 {
     public class DrawHub : Hub
     {
-        private readonly IRuffleService _ruffleService;
+        private readonly IDrawService _drawService;
         private readonly IHubContext<ControlPanelHub, IControlPanelClient> _controlPanelHubContext;
 
-        public DrawHub(IRuffleService ruffleService, IHubContext<ControlPanelHub, IControlPanelClient> controlPanelHubContext)
+        public DrawHub(IDrawService drawService, IHubContext<ControlPanelHub, IControlPanelClient> controlPanelHubContext)
         {
-            _ruffleService = ruffleService;
+            _drawService = drawService;
             _controlPanelHubContext = controlPanelHubContext;
         }
 
         public async Task JoinParticipant()
         {
-            _ruffleService.AddParticipant(Context.ConnectionId);
-            await _controlPanelHubContext.Clients.All.UpdateConnectedPlayers(_ruffleService.GetParticipantsCount());
+            _drawService.AddParticipant(Context.ConnectionId);
+            await _controlPanelHubContext.Clients.All.UpdateConnectedPlayers(_drawService.GetParticipantsCount());
         }
 
         public async Task RestartGame()
@@ -29,9 +29,9 @@ namespace SignalRCore.DrawGame.Hubs
 
         public override async Task OnDisconnectedAsync(Exception exception)
         {
-            _ruffleService.RemoveParticipant(Context.ConnectionId);
+            _drawService.RemoveParticipant(Context.ConnectionId);
 
-            await _controlPanelHubContext.Clients.AllExcept(Context.ConnectionId).UpdateConnectedPlayers(_ruffleService.GetParticipantsCount());
+            await _controlPanelHubContext.Clients.AllExcept(Context.ConnectionId).UpdateConnectedPlayers(_drawService.GetParticipantsCount());
 
             await base.OnDisconnectedAsync(exception);
         }

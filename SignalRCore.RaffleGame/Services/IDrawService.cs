@@ -1,6 +1,6 @@
 ﻿namespace SignalRCore.DrawGame.Services
 {
-    public interface IRuffleService
+    public interface IDrawService
     {
         string Draw();
 

@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace SignalRCore.DrawGame.Services
 {
-    public class RuffleService : IRuffleService
+    public class DrawService : IDrawService
     {
         private IList<string> _userIds { get; set; }
 
-        public RuffleService()
+        public DrawService()
         {
             _userIds = new List<string>();
         }

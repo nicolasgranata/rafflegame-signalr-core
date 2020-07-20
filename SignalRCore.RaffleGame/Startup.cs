@@ -22,7 +22,7 @@ namespace SignalRCore.DrawGame
         {
             services.AddRazorPages();
 
-            services.AddSingleton<IRuffleService, RuffleService>();
+            services.AddSingleton<IDrawService, DrawService>();
 
             services.AddSignalR();
         }
