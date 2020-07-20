@@ -1,4 +1,6 @@
-﻿namespace SignalRCore.DrawGame.Services
+﻿using System.Collections.Generic;
+
+namespace SignalRCore.DrawGame.Services
 {
     public interface IDrawService
     {
@@ -11,5 +13,7 @@
         void RemoveAllParticipants();
 
         int GetParticipantsCount();
+
+        IList<string> GetParticipants();
     }
 }

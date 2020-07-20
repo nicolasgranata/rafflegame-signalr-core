@@ -38,5 +38,7 @@ namespace SignalRCore.DrawGame.Services
         }
 
         public int GetParticipantsCount() => _userIds.Count();
+
+        public IList<string> GetParticipants() => _userIds;
     }
 }
