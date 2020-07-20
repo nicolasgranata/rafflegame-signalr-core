@@ -4,9 +4,7 @@ namespace SignalRCore.DrawGame.Hubs
 {
     public interface IControlPanelClient
     {
-        Task SendWinner(string winner);
-
-        Task SendLosser(string losser);
+        Task GetWinner(string winner);
 
         Task UpdateConnectedPlayers(int playerCount);
 

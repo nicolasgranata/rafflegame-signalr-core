@@ -21,12 +21,12 @@ const participate = () => {
 };
 
 drawConnection.on("Winner", () => {
-
-
+    document.getElementById().classList.remove("d-none");
 });
 
 drawConnection.on("Loser", () => {
     document.getElementById("loserPanel").classList.remove("d-none");
+    document.getElementById("lobby").classList.add("d-none");
 });
 
 drawConnection.on("RestartGame", () => {

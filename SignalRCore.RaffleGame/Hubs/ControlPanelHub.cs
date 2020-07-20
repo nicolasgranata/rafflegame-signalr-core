@@ -26,8 +26,9 @@ namespace SignalRCore.DrawGame.Hubs
 
             _ruffleService.RemoveAllParticipants();
 
-            await Clients.AllExcept(winner).SendLosser("Loser");
-            await Clients.Client(winner).SendWinner("Winner");
+            await Clients.Caller.GetWinner("WinnerIs");
+            await _drawHubContext.Clients.Client(winner).SendAsync("Winner");
+            await _drawHubContext.Clients.AllExcept(winner).SendAsync("Loser");
         }
 
         public async Task RestartGame()

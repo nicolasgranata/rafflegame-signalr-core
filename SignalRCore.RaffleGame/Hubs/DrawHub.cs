@@ -22,11 +22,6 @@ namespace SignalRCore.DrawGame.Hubs
             await _controlPanelHubContext.Clients.All.UpdateConnectedPlayers(_ruffleService.GetParticipantsCount());
         }
 
-        public void RefreshUsers()
-        {
-           // Clients.All.refreshUsers(UserHandler.ConnectedIds.Count().ToString());
-        }
-
         public async Task RestartGame()
         {
             await base.OnDisconnectedAsync(null);
