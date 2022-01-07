@@ -1,4 +1,4 @@
-# DrawGrameSignalRCore
+# RaffleGrameSignalRCore
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
